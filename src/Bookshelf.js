@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Book from './Book'
-import sortBy from 'sort-by'
 import PropTypes from 'prop-types'
 
 class Bookshelf extends Component {
@@ -23,7 +22,7 @@ class Bookshelf extends Component {
                     <h2 className="bookshelf-title">{shelveNames[index]}</h2>
                     <div className="bookshelf-books">
                       <ol className="books-grid">
-                        {this.props.booksOnShelf.sort(sortBy('title'))
+                        {this.props.booksOnShelf
                           .filter(book => book.shelf === shelf)
                           .map(book => (
                             <Book 
